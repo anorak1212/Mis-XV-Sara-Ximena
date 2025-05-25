@@ -338,3 +338,43 @@ $(document).ready(function () {
     closeBtnInside: false
   });
 });
+
+// GALERÍA EMERGENTE (popup-image con Magnific Popup)
+$(document).ready(function () {
+  $('.popup-image').magnificPopup({
+    type: 'image',
+    gallery: {
+      enabled: true
+    },
+    mainClass: 'mfp-fade',
+    removalDelay: 300,
+    closeOnContentClick: true,
+    closeBtnInside: false
+  });
+});
+
+// ANIMACIÓN DE TEXTO AL ENTRAR EN PANTALLA
+document.addEventListener("DOMContentLoaded", () => {
+  const elementos = document.querySelectorAll("h1, h2, h3, p, span, label");
+
+  // Agrega clase base a todo excepto carrusel
+  elementos.forEach(el => {
+    if (!el.classList.contains("carrusel-header") && !el.classList.contains("carrusel-title")) {
+      el.classList.add("animar-entrada");
+    }
+  });
+
+  // IntersectionObserver para mostrar al entrar en viewport
+  const observer = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add("mostrar");
+        observer.unobserve(entrada.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll(".animar-entrada").forEach(el => {
+    observer.observe(el);
+  });
+});

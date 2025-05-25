@@ -10089,3 +10089,41 @@ hr,
   opacity: 0;
   transform: scale(0.95);
 }
+
+
+/* Animación suave para texto al entrar */
+.animar-entrada {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animar-entrada.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animación suave para Magnific Popup */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.3s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+  transform: scale(1);
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+  transform: scale(0.95);
+}
