@@ -26,17 +26,6 @@
     <title>
         Invitacion - XV
     </title>
-
-    <audio id="audio-xv" src="./media/Mucisa.mp3" autoplay hidden></audio>
-    <script>
-  window.addEventListener('DOMContentLoaded', function() {
-    var audio = document.getElementById('audio-xv');
-    if (audio) {
-      audio.volume = 0.05; // Volumen al 5%
-      audio.play().catch(function(){});
-    }
-  });
-</script>
 </head>
 <style>
   .imagen80{
@@ -46,8 +35,6 @@
     color:#ffe3e8;
   }
 </style>
-
-
 <body>
   <!-- seccion de slider -->
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target"
@@ -394,6 +381,17 @@
 
   <script src="js/main.js"></script>
   <!-- Seccion de JavaScript     -->
+
+  <audio id="audio-xv" src="./media/Mucisa.mp3" autoplay hidden></audio>
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    var audio = document.getElementById('audio-xv');
+    if (audio) {
+      audio.volume = 0.05;
+      audio.play().catch(function(){});
+    }
+  });
+</script>
 </body>
 
 </html>
