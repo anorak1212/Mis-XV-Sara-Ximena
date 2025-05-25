@@ -324,3 +324,17 @@ AOS.init({
 	setInterval(function () { makeTimer(); }, 1000);
 
 })(jQuery);
+
+
+$(document).ready(function () {
+  $('.popup-image').magnificPopup({
+    type: 'image',
+    gallery: {
+      enabled: true
+    },
+    mainClass: 'mfp-fade',
+    removalDelay: 300, // tiempo para la animación
+    closeOnContentClick: true,
+    closeBtnInside: false
+  });
+});
