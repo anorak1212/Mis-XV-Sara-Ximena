@@ -65,8 +65,13 @@
     data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <!-- MODIFICAR EL VIDEO A UNA IMAGEN -->
-    <a class="player"
-      data-property="{videoURL:'https://youtu.be/KOAvBC7H-wE',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default',optimizeDisplay:true}"></a>
+     <a class="player"
+  data-property="{videoURL:'https://www.youtube.com/watch?v=KOAvBC7H-wE',containment:'#home', showControls:false, autoPlay:true, mute:true, startAt:0, opacity:1, loop:true, playlist:'KOAvBC7H-wE', quality:'default', optimizeDisplay:true}">
+</a>
+
+    <!-- <a class="player"
+      data-property="{videoURL:'https://youtu.be/KOAvBC7H-wE',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default',optimizeDisplay:true}">
+    </a>-->
 
     <div class="container">
       <div class="row js-fullheight justify-content-center d-flex align-items-center">
@@ -394,6 +399,24 @@
     document.addEventListener('click', playAudioXV);
     document.addEventListener('touchstart', playAudioXV);
   </script>
+  <script>
+  $(document).ready(function () {
+    // Inicializar el reproductor si aún no está
+    $(".player").YTPlayer();
+
+    // Forzar el loop manualmente al terminar el video
+    $(".player").on("YTPReady", function (e) {
+      let player = $(this).YTPGetPlayer();
+      player.addEventListener("onStateChange", function (event) {
+        if (event.data === 0) { // 0 = ended
+          player.seekTo(0);
+          player.playVideo();
+        }
+      });
+    });
+  });
+</script>
+
 </body>
 
 </html>
