@@ -1,38 +1,66 @@
 document.addEventListener("DOMContentLoaded", function () {
-  
-    //   Archivo de audio
-    var audio = document.getElementById("audio");
+    // ===========================================
+    // AUDIO CON FADE-IN SUAVE
+    // ===========================================
+    const audio = document.getElementById("audio");
+
     if (audio) {
-        audio.volume = 0.3;
+        audio.volume = 0; // Inicia en silencio
+
+        const fadeIn = () => {
+            let volumen = 0;
+            const fadeInterval = setInterval(() => {
+                if (volumen < 0.3) {
+                    volumen += 0.01;
+                    audio.volume = volumen;
+                } else {
+                    clearInterval(fadeInterval);
+                }
+            }, 100); // 0.01 cada 100ms → 3s para llegar a 0.3
+        };
+
+        const intentoPlay = () => {
+            audio.play().then(() => {
+                fadeIn();
+            }).catch(() => {
+                setTimeout(intentoPlay, 2000); // Reintenta si está bloqueado
+            });
+        };
+
+        intentoPlay();
     } else {
         console.error("No se encontró el elemento de audio.");
     }
 
-    
-    //  Creacion de cronometro
-    function crearCountdown(){
-        var targetDate = new Date("2024-07-20T17:30:00");
-        var currentDate = new Date();
-        var diferencia = targetDate - currentDate;
+    // ===========================================
+    // CRONÓMETRO HASTA EL 5 DE JULIO 2025 - 17:30
+    // ===========================================
+    function crearCountdown() {
+        const targetDate = new Date("2025-07-05T17:30:00");
+        const currentDate = new Date();
+        let diferencia = targetDate - currentDate;
 
-        var days = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-        var hour = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minu = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-        var seco = Math.floor((diferencia % (1000 * 60)) / 1000);
+        if (diferencia < 0) diferencia = 0;
 
+        const days = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diferencia % (1000 * 60)) / 1000);
 
         document.getElementById("dia").innerText = days;
-        document.getElementById("hor").innerText = hour;
-        document.getElementById("min").innerText = minu;
-        document.getElementById("seg").innerText = seco;
-        
+        document.getElementById("hor").innerText = hours;
+        document.getElementById("min").innerText = minutes;
+        document.getElementById("seg").innerText = seconds;
     }
 
     setInterval(crearCountdown, 1000);
     crearCountdown();
 
+    // ===========================================
+    // LÍNEA DE TIEMPO (animación al hacer scroll)
+    // ===========================================
     function isElementInViewport(el) {
-        var rect = el.getBoundingClientRect();
+        const rect = el.getBoundingClientRect();
         return (
             rect.top >= 0 &&
             rect.left >= 0 &&
@@ -41,22 +69,21 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
 
-    function muestraLi(){
-        var items = document.querySelectorAll(".timeline li");
-        items.forEach(function (item) {
-            if(isElementInViewport(item)){
-                item.classList.add('visible');
+    function muestraLi() {
+        const items = document.querySelectorAll(".timeline li");
+        items.forEach((item) => {
+            if (isElementInViewport(item)) {
+                item.classList.add("visible");
             }
         });
     }
 
-    window.addEventListener('scroll', function(){
-        muestraLi();
-    });
-
+    window.addEventListener("scroll", mues|traLi);
     muestraLi();
 
-    var hoy = new Date();
-    var anio = hoy.getFullYear();
+    // ===========================================
+    // AÑO AUTOMÁTICO EN EL FOOTER
+    // ===========================================
+    const anio = new Date().getFullYear();
     document.getElementById("anio").innerText = anio;
 });

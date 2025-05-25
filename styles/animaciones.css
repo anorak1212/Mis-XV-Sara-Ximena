@@ -1,0 +1,53 @@
+/* ==================================================
+   ANIMACIÓN ELEGANTE DE ENTRADA PARA TÍTULOS
+   ================================================== */
+
+/* ANIMACIÓN PARA AMBOS: ¡Mis XV años! y Sara Ximena */
+.carrusel-header h1,
+.carrusel-title h1 {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(4px);
+    animation: entradaSuaveBlur 1.5s ease-out forwards;
+}
+
+/* Retardo elegante para que el nombre entre después */
+.carrusel-title h1 {
+    animation-delay: 0.7s;
+}
+
+/* Definición elegante de entrada */
+@keyframes entradaSuaveBlur {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* ==================================================
+   ANIMACIÓN SUAVE AL ENTRAR A PANTALLA (reutilizable)
+   ================================================== */
+.animar-entrada {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(3px);
+    transition: all 1.2s ease;
+}
+
+.animar-entrada.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+
+/* Oculta completamente el reproductor de audio */
+#audio {
+    display: none;
+}
