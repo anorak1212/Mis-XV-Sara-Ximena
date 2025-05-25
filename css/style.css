@@ -9909,3 +9909,149 @@ textarea.form-control {
       margin-bottom: 0;
     }
     
+:root {
+  --color1: #4e5eea;   /* Azul fuerte */
+  --color3: #a7aff4;   /* Azul claro */
+  --color4: #d3d7fa;   /* Azul muy claro */
+  --color5: #ffffff;   /* Blanco */
+  --color6: #4180ab;   /* Azul verdoso */
+  --color7: #ffffff;   /* Blanco duplicado */
+  --color8: #8ab3cf;   /* Azul pastel */
+  --color9: #bdd1de;   /* Azul grisáceo */
+  --color10: #e4ebf0;  /* Gris azulado */
+}
+
+/* Fondos principales y secundarios */
+body,
+.ftco-section,
+.fh5co-bg,
+#fh5co-event,
+#lovestory-section,
+#lovestory {
+  background: var(--color2) !important;
+  color: #212529 !important;
+}
+
+/* Tarjetas, paneles, formularios */
+.card,
+.card-body,
+.card-footer,
+.card-header,
+.timeline > li > .timeline-panel,
+.rsvp-form,
+.sidebar-box,
+.block-21 .text,
+.testimony-wrap,
+.comment-list li .comment-body,
+.comment-list li .vcard,
+.contact-section .box,
+.contact-section .contact-form,
+.form-control,
+input,
+textarea,
+select,
+.place .text,
+.ftco-about .wrap,
+.ftco-about .text,
+.heading-section,
+.heading-section .subheading,
+.heading-section h2,
+.fh5co-heading,
+.fh5co-heading h2,
+.fh5co-heading p,
+.section-title {
+  /* background: var(--color5) !important; */
+  color: black !important;
+  border-color: var(--color8) !important;
+  box-shadow: none !important;
+}
+
+/* Bordes y separadores */
+.card,
+.timeline > li > .timeline-panel,
+.sidebar-box,
+.testimony-wrap {
+  border-color: var(--color10) !important;
+}
+
+/* Títulos principales */
+.heading-section h2,
+.fh5co-heading h2,
+.section-title,
+.ftco-about h2 {
+  color: #412a9c !important;
+}
+
+/* Subtítulos y detalles */
+.heading-section .subheading,
+/* .ftco-about .subheading, */
+.rosapalo {
+  color: var(--color3) !important;
+}
+
+/* Links */
+a:hover,
+a:focus {
+  color: var(--color3) !important;
+}
+
+/* Botones primarios */
+.btn.btn-primary,
+.btn-primary {
+  background: var(--color1) !important;
+  border-color: var(--color1) !important;
+  color: var(--color5) !important;
+}
+
+/* Botones secundarios */
+.btn.btn-secondary,
+.btn-secondary {
+  background: var(--color8) !important;
+  border-color: var(--color8) !important;
+  color: var(--color5) !important;
+}
+.btn.btn-secondary:hover,
+.btn-secondary:hover,
+.btn.btn-secondary:focus,
+.btn-secondary:focus {
+  background: var(--color6) !important;
+  border-color: var(--color6) !important;
+  color: var(--color5) !important;
+}
+
+
+/* Utilitarios para fondos y textos */
+.bg-primary { background: var(--color1) !important; }
+.bg-secondary { background: var(--color8) !important; }
+.bg-light { background: var(--color4) !important; }
+.bg-white { background: var(--color5) !important; }
+.text-primary { color: var(--color1) !important; }
+.text-secondary { color: var(--color8) !important; }
+.text-dark { color: #212529 !important; }
+.text-white { color: var(--color5) !important; }
+
+/* Timeline y badges */
+.timeline:before {
+  border-right: 1px solid var(--color1) !important;
+}
+.timeline > li > .timeline-badge {
+  border: 5px solid var(--color1) !important;
+}
+
+/* Sección de confirmación */
+#fh5co-started {
+  background: white !important;
+}
+#fh5co-started .fh5co-heading h2 {
+  color: var(--color1) !important;
+}
+#fh5co-started .fh5co-heading p {
+  color: black !important;
+}
+/* Separadores y detalles */
+hr,
+.border,
+.border-top,
+.border-bottom {
+  border-color: var(--color10) !important;
+}
