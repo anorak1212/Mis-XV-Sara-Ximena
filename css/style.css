@@ -9985,9 +9985,11 @@ select,
 .fh5co-heading h2,
 .section-title,
 .ftco-about h2 {
-  color: #412a9c !important;
+  color: #4e5eea !important;
 }
-
+#galery-h2{
+  color: #0062cc !important;
+}
 /* Subtítulos y detalles */
 .heading-section .subheading,
 /* .ftco-about .subheading, */
@@ -9998,7 +10000,7 @@ select,
 /* Links */
 a:hover,
 a:focus {
-  color: var(--color3) !important;
+  color: black !important;
 }
 
 /* Botones primarios */
