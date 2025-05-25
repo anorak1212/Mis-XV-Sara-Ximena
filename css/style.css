@@ -9924,12 +9924,16 @@ textarea.form-control {
 /* Fondos principales y secundarios */
 body,
 .ftco-section,
-.fh5co-bg,
 #fh5co-event,
 #lovestory-section,
 #lovestory {
   background: var(--color2) !important;
   color: #212529 !important;
+}
+
+#fh5co-event, 
+#lovestory{
+  background: var(--color10) !important;
 }
 
 /* Tarjetas, paneles, formularios */
