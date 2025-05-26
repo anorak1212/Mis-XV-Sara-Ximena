@@ -1,31 +1,4 @@
-/*!
- * Bootstrap v4.3.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
 :root {
-  --blue: #007bff;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #dc3545;
-  --orange: #fd7e14;
-  --yellow: #ffc107;
-  --green: #28a745;
-  --teal: #20c997;
-  --cyan: #17a2b8;
-  --white: #fff;
-  --gray: #6c757d;
-  --gray-dark: #343a40;
-  --primary: #007bff;
-  --secondary: #6c757d;
-  --success: #28a745;
-  --info: #17a2b8;
-  --warning: #ffc107;
-  --danger: #dc3545;
-  --light: #f8f9fa;
-  --dark: #343a40;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -8842,6 +8815,11 @@ textarea.form-control {
   color: #000000;
   margin-bottom: 10px; }
 
+.timeline-panel {
+  box-shadow: 0 4px 24px rgba(79, 94, 234, 0.10), 0 1.5px 6px rgba(0,0,0,0.7);
+  border-radius: 1em;
+  background: var(--color4) !important;
+}
 .date {
   display: block;
   margin-bottom: 10px;
@@ -9970,7 +9948,8 @@ body,
   background: white;
 }
 
-.fh5co-heading h2 {
+.fh5co-heading h2,
+.heading-section h2.mb-3 {
   display: inline-block;
   background: #fff;
   border-radius: 1em;
@@ -10102,4 +10081,105 @@ hr,
 .animar-entrada.mostrar {
   opacity: 1;
   transform: none;
+}
+
+/* Tarjeta giratoria para la sección de presentación */
+.flip-card {
+  background: transparent;
+  width: 100%;
+  max-width: 400px;
+  height: 600px;
+  perspective: 1200px;
+  margin: 0 auto 2em auto;
+}.flip-card {
+  background: transparent;
+  width: 100%;
+  max-width: 400px;
+  height: 400px; /* <-- Ajusta aquí el alto deseado */
+  perspective: 1200px;
+  margin: 0 auto 2em auto;
+}/* Ajuste uniforme de altura para la tarjeta giratoria y la imagen */
+/* Ajuste uniforme de altura para la tarjeta giratoria y la imagen */
+.flip-card,
+.flip-card-front,
+.flip-card-back,
+.flip-card .img {
+  height: 600px !important;
+  min-height: 600px !important;
+  max-height: 600px !important;
+}
+
+.flip-card .img {
+  width: 100%;
+  height: 100%; /* La imagen ocupa todo el alto de la tarjeta */
+  border-radius: 1.5em;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.flip-card-front, .flip-card-back {
+  height: 100%; /* Ambos lados ocupan todo el alto */
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5em;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  backface-visibility: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flip-card-front {
+  background: #fff;
+  overflow: hidden;
+}
+.flip-card-back {
+  background: #fff;
+  transform: rotateY(180deg);
+  padding: 2em 1em;
+}
+.flip-card .img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5em;
+  background-size: cover !important;
+  background-position: center !important;
+}
+.card-content .subheading {
+  color: #4e5eea;
+  font-weight: 500;
+  font-size: 1.1em;
+}
+.card-content h2 {
+  font-family: "Great Vibes", cursive;
+  color: #0062cc;
+  font-size: 2.5em;
+  margin: 0.5em 0;
+}
+.card-content .time {
+  color: #4180ab;
+  font-size: 1.2em;
+}
+@media (max-width: 600px) {
+  .flip-card {
+    max-width: 95vw;
+    height: 320px;
+  }
+  .flip-card .img {
+    height: 100%;
+  }
 }

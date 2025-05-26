@@ -27,7 +27,7 @@
   <title>
     Invitacion - XV
   </title>
-  <link rel="icon" href="./img/envelope.ico"/>
+  <link rel="icon" href="./img/envelope.ico" />
 </head>
 <style>
   .imagen80 {
@@ -65,13 +65,9 @@
     data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <!-- MODIFICAR EL VIDEO A UNA IMAGEN -->
-     <a class="player"
-  data-property="{videoURL:'https://www.youtube.com/watch?v=KOAvBC7H-wE',containment:'#home', showControls:false, autoPlay:true, mute:true, startAt:0, opacity:1, loop:true, playlist:'KOAvBC7H-wE', quality:'default', optimizeDisplay:true}">
-</a>
-
-    <!-- <a class="player"
-      data-property="{videoURL:'https://youtu.be/KOAvBC7H-wE',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default',optimizeDisplay:true}">
-    </a>-->
+    <a class="player"
+      data-property="{videoURL:'https://www.youtube.com/watch?v=KOAvBC7H-wE',containment:'#home', showControls:false, autoPlay:true, mute:true, startAt:0, opacity:1, loop:true, playlist:'KOAvBC7H-wE', quality:'default', optimizeDisplay:true}">
+    </a>
 
     <div class="container">
       <div class="row js-fullheight justify-content-center d-flex align-items-center">
@@ -94,32 +90,33 @@
     </div>
   </section>
   <!-- seccion de slider -->
+  <br>
   <section class="ftco-section ftco-about ftco-no-pt ftco-no-pb" id="groom-bride-section">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="wrap">
-            <div class="row d-flex">
-              <div class="col-md-6 d-flex">
-                <div class="img d-flex align-self-stretch align-items-center imagen80 animar-entrada"
-                  style="background-image:url(./img/profile-sara.jpeg);">
+      <div class="row justify-content-center">
+        <div class="col-md-8 d-flex justify-content-center">
+          <div class="flip-card">
+            <div class="flip-card-inner" id="flipCard">
+              <!-- Lado frontal: Imagen -->
+              <div class="flip-card-front d-flex align-items-center justify-content-center">
+                <div class="img imagen80"
+                  style="background-image:url(./img/profile-sara.jpeg); width:100%; height:350px; border-radius:1.5em;">
+                  <p
+                    style="position:absolute; bottom:20px; left:50%; transform:translateX(-50%); background:rgba(255,255,255,0.85); color:#4e5eea; padding:8px 22px; border-radius:2em; font-weight:bold; font-size:1.1em; box-shadow:0 2px 8px rgba(78,94,234,0.08);">
+                    <img src="./img/background/dedo_indicador.png" alt="rosa" style="width: 40px; height: 60px; vertical-align: middle;">
+                  </p>
+
                 </div>
               </div>
-              <div class="col-md-6 py-md-5 text">
-                <div class="py-md-4">
-                  <div class="row justify-content-start pb-3">
-                    <div class="col-md-12 ftco-animate p-4 p-lg-5 text-center">
-                      <span class="subheading mb-4">
-                        ¡Ha llegado el momento más especial!<br>
-                        Estás cordialmente invitado a celebrar mis
-                      </span>
-                      <h2 class="mb-4 rosapalo">XV años<br>Sara Ximena</h2>
-                      <span class="icon flaticon-rose-variant-outline-with-vines"></span>
-                      <span class="subheading">Acompáñanos el</span>
-                      <p class="time mb-4"><span>5 | Julio | 2025</span></p>
-                      <span class="subheading mb-5"></span>
-                    </div>
-                  </div>
+              <!-- Lado trasero: Evento -->
+              <div class="flip-card-back d-flex align-items-center justify-content-center">
+                <div class="card-content text-center">
+                  <span class="subheading mb-4">¡Ha llegado el momento más especial!<br>Estás cordialmente invitado a
+                    celebrar mis</span>
+                  <h2 class="mb-4 rosapalo">XV años<br>Sara Ximena</h2>
+                  <span class="icon flaticon-rose-variant-outline-with-vines"></span>
+                  <span class="subheading">Acompáñanos el</span>
+                  <p class="time mb-4"><span>5 | Julio | 2025</span></p>
                 </div>
               </div>
             </div>
@@ -128,6 +125,7 @@
       </div>
     </div>
   </section>
+
   <!-- Seccion de evento -->
   <section class="ftco-section ftco-about ftco-no-pt ftco-no-pb">
     <div id="fh5co-event" class="fh5co-bg pb-3 mb-2" style="background-color:whitesmoke;">
@@ -274,10 +272,11 @@
   <!-- Seccion de Padres & Padrinos -->
   <!-- Seccion de Quien Soy? o Galeria -->
   <section id="lovestory" class="ftco-section ftco-about ftco-no-pt ftco-no-pb">
+    <br>
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center fh5co-heading animate-box">
-          <h2 id="galery-h2">¿Quién soy?</h2>
+          <h2 id="galery-h2">📷 Galeria 📷</h2>
         </div>
         <div class="col-md-12">
           <ul id="fh5co-gallery-list">
@@ -350,13 +349,15 @@
   </section>
   <!-- Seccion de Quien Soy? o Galeria -->
   <!-- Seccion de confirmacion -->
-  <div id="fh5co-started" class="fh5co-bg" style="background-image:url(./img/background/font-flowers.jpeg);background-size: 100%;">
+  <div id="fh5co-started" class="fh5co-bg"
+    style="background-image:url(./img/background/font-flowers.jpeg);background-size: 100%;">
     <div class="overlay"></div>
     <div class="container">
       <div class="row animate-box">
         <div class="col-md-12 text-center fh5co-heading">
           <h2>Confirmar Asistencia</h2>
-          <p>Por favor, confirma tu asistencia por <Strong>WhatsApp</Strong> o por la red social que te sea más fácil. ¡Gracias!</p>
+          <p>Por favor, confirma tu asistencia por <Strong>WhatsApp</Strong> o por la red social que te sea más fácil.
+            ¡Gracias!</p>
         </div>
       </div>
     </div>
@@ -400,22 +401,22 @@
     document.addEventListener('touchstart', playAudioXV);
   </script>
   <script>
-  $(document).ready(function () {
-    // Inicializar el reproductor si aún no está
-    $(".player").YTPlayer();
+    $(document).ready(function () {
+      // Inicializar el reproductor si aún no está
+      $(".player").YTPlayer();
 
-    // Forzar el loop manualmente al terminar el video
-    $(".player").on("YTPReady", function (e) {
-      let player = $(this).YTPGetPlayer();
-      player.addEventListener("onStateChange", function (event) {
-        if (event.data === 0) { // 0 = ended
-          player.seekTo(0);
-          player.playVideo();
-        }
+      // Forzar el loop manualmente al terminar el video
+      $(".player").on("YTPReady", function (e) {
+        let player = $(this).YTPGetPlayer();
+        player.addEventListener("onStateChange", function (event) {
+          if (event.data === 0) { // 0 = ended
+            player.seekTo(0);
+            player.playVideo();
+          }
+        });
       });
     });
-  });
-</script>
+  </script>
 
 </body>
 

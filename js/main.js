@@ -394,3 +394,16 @@ $(document).ready(function () {
     closeBtnInside: false
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  var flipCard = document.querySelector('.flip-card');
+  if (flipCard) {
+    flipCard.addEventListener('click', function() {
+      flipCard.classList.toggle('flipped');
+    });
+    // Opcional: para móviles, también con touch
+    flipCard.addEventListener('touchstart', function() {
+      flipCard.classList.toggle('flipped');
+    });
+  }
+});
