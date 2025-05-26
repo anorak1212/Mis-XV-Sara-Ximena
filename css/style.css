@@ -1,4 +1,31 @@
+/*!
+ * Bootstrap v4.3.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 :root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -8815,11 +8842,6 @@ textarea.form-control {
   color: #000000;
   margin-bottom: 10px; }
 
-.timeline-panel {
-  box-shadow: 0 4px 24px rgba(79, 94, 234, 0.10), 0 1.5px 6px rgba(0,0,0,0.7);
-  border-radius: 1em;
-  background: var(--color4) !important;
-}
 .date {
   display: block;
   margin-bottom: 10px;
@@ -9948,8 +9970,7 @@ body,
   background: white;
 }
 
-.fh5co-heading h2,
-.heading-section h2.mb-3 {
+.fh5co-heading h2 {
   display: inline-block;
   background: #fff;
   border-radius: 1em;
@@ -10148,7 +10169,7 @@ hr,
   overflow: hidden;
 }
 .flip-card-back {
-  background: #fff;
+  background: #fff !important;
   transform: rotateY(180deg);
   padding: 2em 1em;
 }
@@ -10160,18 +10181,19 @@ hr,
   background-position: center !important;
 }
 .card-content .subheading {
-  color: #4e5eea;
+  color: black;
   font-weight: 500;
   font-size: 1.1em;
 }
 .card-content h2 {
   font-family: "Great Vibes", cursive;
-  color: #0062cc;
+  font-size: 50px !important;
+  color: var(--color1);
   font-size: 2.5em;
   margin: 0.5em 0;
 }
 .card-content .time {
-  color: #4180ab;
+  color: var(--color1);
   font-size: 1.2em;
 }
 @media (max-width: 600px) {
