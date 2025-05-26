@@ -9993,10 +9993,13 @@ select,
 /* Subtítulos y detalles */
 .heading-section .subheading,
 /* .ftco-about .subheading, */
-.rosapalo {
+.h3 {
   color: var(--color3) !important;
 }
-
+.timeline-title{
+  font-family: "Great Vibes", cursive !important;
+  color: #4e5eea !important;
+}
 /* Links */
 a:hover,
 a:focus {
@@ -10061,7 +10064,7 @@ hr,
 .border,
 .border-top,
 .border-bottom {
-  border-color: var(--color10) !important;
+  border-color: var(--color8) !important;
 }
 
 /* Animación suave para Magnific Popup */
