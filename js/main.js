@@ -378,3 +378,19 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(el);
   });
 });
+
+// Animación de entrada uniforme para todos los elementos con .animar-entrada
+
+// Galería emergente para imágenes
+$(document).ready(function () {
+  $('.popup-image').magnificPopup({
+    type: 'image',
+    gallery: {
+      enabled: true
+    },
+    mainClass: 'mfp-fade',
+    removalDelay: 300,
+    closeOnContentClick: true,
+    closeBtnInside: false
+  });
+});
