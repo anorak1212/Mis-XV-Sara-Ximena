@@ -9997,20 +9997,20 @@ body,
 }
 
 #galery-h2{
-  color: #0062cc !important;
+  color: var(--color1) !important;
 }
 
 /* Subtítulos y detalles */
 .heading-section .subheading,
 /* .ftco-about .subheading, */
 .h3 {
-  color: var(--color3) !important;
+  color: var(--color1) !important;
 }
 
 .timeline-title,
 .fh5co-heading h2{
   font-family: "Great Vibes", cursive !important;
-  color: #0062cc !important;
+  color: var(--color1) !important;
 }
 
 /* Links */
@@ -10198,10 +10198,26 @@ hr,
 }
 @media (max-width: 600px) {
   .flip-card {
-    max-width: 95vw;
-    height: 320px;
+    max-width: 90vw;
+    height: 100px;
   }
   .flip-card .img {
     height: 100%;
   }
+}
+
+.icon.flaticon-rose-variant-outline-with-vines {
+  color: #222 !important;
+  opacity: 1 !important;
+  font-size: 5em;
+}
+
+/* Fondo blanco y ancho ajustado al texto para el título Papás & Padrinos */
+.heading-section h2.mb-3 {
+  display: inline-block;
+  background: #fff;
+  border-radius: 2em;
+  padding: 0.5em 2em;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  border: 2px solid #fff;
 }
