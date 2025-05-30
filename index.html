@@ -39,9 +39,21 @@
   .rosapalo {
     color: #ffe3e8;
   }
+
+  #audio-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    z-index: 99999;
+    cursor: pointer;
+  }
 </style>
 
 <body>
+  <div id="audio-overlay"></div>
   <!-- seccion de slider -->
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target"
     id="ftco-navbar">
@@ -353,7 +365,7 @@
                   <h3 class="timeline-title">Mamá</h3>
                 </div>
                 <div class="timeline-body">
-                  <p>Wendolin Peña Dotor</p>
+                  <p>Wendoline Peña Dotor</p>
                 </div>
               </div>
             </li>
@@ -603,6 +615,28 @@
       }
     });
   </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const overlay = document.getElementById("audio-overlay");
+    const audio = document.getElementById("audio-xv");
+
+    if (overlay && audio) {
+      const activarAudio = () => {
+        audio.volume = 0.5;
+        audio.play().catch((e) => {
+          console.log("Audio bloqueado:", e);
+        });
+        overlay.style.display = "none"; // Ocultar el overlay tras el primer clic
+        overlay.removeEventListener("click", activarAudio);
+        overlay.removeEventListener("touchstart", activarAudio);
+      };
+
+      overlay.addEventListener("click", activarAudio);
+      overlay.addEventListener("touchstart", activarAudio);
+    }
+  });
+</script>
+
 </body>
 
 </html>
