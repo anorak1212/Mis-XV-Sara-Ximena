@@ -186,7 +186,7 @@
                         <span>14:00 hrs</span>
                       </div>
                       <p class="card-text">
-                        <strong>Parroquia de la Divina Providencia</strong>.<br><br>
+                        <strong>Parroquia de la Divina Providencia</strong>.<br><br><br>
                         <em>
                           Calle Eduardo González y Pichardo 1210,
                           Morelos 2a sección, Toluca de Lerdo, Edo. de Mex
@@ -344,8 +344,8 @@
           <ul class="timeline animate-box">
             <li class="animate-box">
               <div class="timeline-badge icon-family">
-  <img src="./img/background/blueflower.png" alt="mamá" style="width: 50px; height: 50px;">
-</div>
+                <img src="./img/background/blueflower.png" alt="mamá" style="width: 50px; height: 50px;">
+              </div>
 
               <div class="timeline-panel ftco-animate text-md-right">
                 <div class="overlay"></div>
@@ -359,8 +359,8 @@
             </li>
             <li class="timeline-inverted animate-box">
               <div class="timeline-badge icon-family">
-  <img src="./img/background/corbataazul.png" alt="papá" style="width: 50px; height: 50px;">
-</div>
+                <img src="./img/background/corbataazul.png" alt="papá" style="width: 50px; height: 50px;">
+              </div>
 
               <div class="timeline-panel ftco-animate">
                 <div class="overlay overlay-2"></div>
@@ -374,8 +374,8 @@
             </li>
             <li class="animate-box">
               <div class="timeline-badge icon-family">
-  <img src="./img/background/flromorada.png" alt="madrina" style="width: 50px; height: 50px;">
-</div>
+                <img src="./img/background/flromorada.png" alt="madrina" style="width: 50px; height: 50px;">
+              </div>
 
               <div class="timeline-panel ftco-animate text-md-right">
                 <div class="overlay"></div>
@@ -389,8 +389,8 @@
             </li>
             <li class="timeline-inverted animate-box">
               <div class="timeline-badge icon-family">
-  <img src="./img/background/corbatamorada.png" alt="padrino" style="width: 50px; height: 50px;">
-</div>
+                <img src="./img/background/corbatamorada.png" alt="padrino" style="width: 50px; height: 50px;">
+              </div>
 
               <div class="timeline-panel ftco-animate">
                 <div class="overlay overlay-2"></div>
@@ -410,7 +410,7 @@
   <style>
     .timeline-badge.icon-family {
       background: #fff;
-      border: 4px solid #7a42f4;
+      border: 4px solid #425af4;
       width: 80px;
       height: 80px;
       border-radius: 50%;
@@ -418,8 +418,8 @@
       align-items: center;
       justify-content: center;
       font-size: 2rem;
-      color: #7a42f4;
-      box-shadow: 0 0 10px rgba(106, 90, 205, 0.3);
+      color: #425af4;
+      box-shadow: 0 0 10px rgba(90, 126, 205, 0.3);
     }
   </style>
 
@@ -563,20 +563,7 @@
 
   <script src="js/main.js"></script>
   <!-- Seccion de JavaScript     -->
-  <audio id="audio-xv" src="./media/Mucisa.mp3" autoplay hidden></audio>
-  <script>
-    function playAudioXV() {
-      var audio = document.getElementById('audio-xv');
-      if (audio) {
-        audio.volume = 0.5;
-        audio.play();
-      }
-      document.removeEventListener('click', playAudioXV);
-      document.removeEventListener('touchstart', playAudioXV);
-    }
-    document.addEventListener('click', playAudioXV);
-    document.addEventListener('touchstart', playAudioXV);
-  </script>
+  <!-- <audio id="audio-xv" src="./media/Mucisa.mp3" autoplay hidden></audio> -->
   <script>
     $(document).ready(function () {
       // Inicializar el reproductor si aún no está
@@ -603,18 +590,19 @@
       if (trigger && audio) {
         const activarAudio = () => {
           audio.volume = 0.5;
-          audio.play().catch(() => { });
+          audio.play().catch((e) => {
+            console.log("Audio bloqueado por navegador:", e);
+          });
+          // Remueve listeners solo si el audio se inició
           trigger.removeEventListener('click', activarAudio);
           trigger.removeEventListener('touchstart', activarAudio);
         };
 
-        trigger.addEventListener('click', activarAudio);
-        trigger.addEventListener('touchstart', activarAudio);
+        trigger.addEventListener('click', activarAudio, { once: true });
+        trigger.addEventListener('touchstart', activarAudio, { once: true });
       }
     });
   </script>
-
-
 </body>
 
 </html>
