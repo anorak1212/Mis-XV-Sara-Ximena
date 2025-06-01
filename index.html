@@ -6,6 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta property="og:title" content="XV de Sara Ximena">
+  <meta property="og:description" content="¡Gracias por formar parte de este hermoso momento en mi vida!">
+  <meta property="og:image" content="img/meta.jpeg">
+  <meta property="og:url" content="https://mis-xv-sara-ximena.netlify.app/"> <!-- Cámbialo por tu URL real -->
+  <meta name="twitter:card" content="summary_large_image">
+
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,400i,700&display=swap" rel="stylesheet">
@@ -616,26 +622,26 @@
     });
   </script>
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const overlay = document.getElementById("audio-overlay");
-    const audio = document.getElementById("audio-xv");
+    document.addEventListener("DOMContentLoaded", function () {
+      const overlay = document.getElementById("audio-overlay");
+      const audio = document.getElementById("audio-xv");
 
-    if (overlay && audio) {
-      const activarAudio = () => {
-        audio.volume = 0.5;
-        audio.play().catch((e) => {
-          console.log("Audio bloqueado:", e);
-        });
-        overlay.style.display = "none"; // Ocultar el overlay tras el primer clic
-        overlay.removeEventListener("click", activarAudio);
-        overlay.removeEventListener("touchstart", activarAudio);
-      };
+      if (overlay && audio) {
+        const activarAudio = () => {
+          audio.volume = 0.5;
+          audio.play().catch((e) => {
+            console.log("Audio bloqueado:", e);
+          });
+          overlay.style.display = "none"; // Ocultar el overlay tras el primer clic
+          overlay.removeEventListener("click", activarAudio);
+          overlay.removeEventListener("touchstart", activarAudio);
+        };
 
-      overlay.addEventListener("click", activarAudio);
-      overlay.addEventListener("touchstart", activarAudio);
-    }
-  });
-</script>
+        overlay.addEventListener("click", activarAudio);
+        overlay.addEventListener("touchstart", activarAudio);
+      }
+    });
+  </script>
 
 </body>
 
